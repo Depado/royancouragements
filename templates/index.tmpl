@@ -67,6 +67,20 @@
                 Des erreurs dans le formulaire il semblerait.
             </div>
         </div>
+        {{ end }} {{ if eq .posted "remote_error" }}
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                Il semblerait qu'il y ai un problème avec le site marchons.com.
+            </div>
+        </div>
+        {{ end }} {{ if eq .posted "success" }}
+        <div class="ui success message">
+            <i class="close icon"></i>
+            <div class="header">
+                Ton message a bien été envoyé ☺
+            </div>
+        </div>
         {{ end }}
         <div class="ui icon message">
             <i class="inbox icon"></i>
@@ -75,6 +89,8 @@
                     Toi aussi offre ton soutiens à ces braves gens !
                 </div>
                 <p>Parce que chaque jour qui passe, nous nous demandons tous : “Mais combien de kilomètres aurait fait Fanch si il avait couru 24h d'affilé ?” et qu'enfin nous allons avoir notre réponse.</p>
+                <p>Et parce que j'ai codé ce machin à la va vite, <a href="http://www.marchons.com/directlive/encourage.php?comp=187">clique-ici si rien ne marche.</a></p>
+                <p>Et le code traine <a href="https://github.com/Depado/royancouragements">quelque part par là.</a></p>
             </div>
         </div>
         <div class="ui segment center aligned">
@@ -102,6 +118,16 @@
                 </div>
                 <button class="ui button" type="submit">Submit</button>
             </form>
+        </div>
+        <div class="ui icon message">
+            <i class="dollar icon"></i>
+            <div class="content">
+                <div class="header">
+                    Sinon tu peux aussi donner des sous à une association !
+                </div>
+                <p><a href="https://give.everydayhero.com/au/alison-24h" target="_blank">C'est par ici que ça se passe</a></p>
+                <p>‘On My Feet’ Australia, aide les SDF à se remettre sur pieds via la course à pied. N’hésite pas à contribuer à cette très belle cause !</p>
+            </div>
         </div>
     </div>
     <script>
