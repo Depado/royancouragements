@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Royancouragements</title>
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="/static/semantic/dist/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+    <script src="/static/semantic/dist/semantic.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("/static/bg.png");
+            background-repeat: repeat;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+    <style type="text/css">
+        #head {
+            background-image: url("/static/header_bg.png");
+            background-repeat: repeat;
+        }
+
+        .masthead h1.ui.header {
+            margin-top: 0.5em;
+            margin-bottom: 0em;
+            font-size: 4em;
+            font-weight: normal;
+        }
+
+        .masthead h2.ui.header {
+            font-size: 1.7em;
+            margin-bottom: 1.5em;
+            font-weight: normal;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .masthead h1.ui.header {
+                font-size: 2em;
+                margin-top: 1.5em;
+            }
+            .masthead h2.ui.header {
+                margin-top: 0.5em;
+                font-size: 1.5em;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="ui vertical masthead center aligned segment" id="head">
+        <div class="ui text container">
+            <h1 class="ui inverted header">LBC @ Royan</h1>
+            <h2 class="ui inverted header">Et si on les encourageait un peu ?</h2>
+        </div>
+    </div>
+
+    <div class="ui container" style="margin-top: 1em;">
+        {{ if eq .posted "errors" }}
+        <div class="ui negative message">
+            <i class="close icon"></i>
+            <div class="header">
+                Des erreurs dans le formulaire il semblerait.
+            </div>
+        </div>
+        {{ end }}
+        <div class="ui icon message">
+            <i class="inbox icon"></i>
+            <div class="content">
+                <div class="header">
+                    Toi aussi offre ton soutiens à ces braves gens !
+                </div>
+                <p>Parce que chaque jour qui passe, nous nous demandons tous : “Mais combien de kilomètres aurait fait Fanch si il avait couru 24h d'affilé ?” et qu'enfin nous allons avoir notre réponse.</p>
+            </div>
+        </div>
+        <div class="ui segment center aligned">
+            <form class="ui form" action="/" method="post">
+                <div class="field">
+                    <div class="ui selection dropdown">
+                        <input name="athlete" type="hidden">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Athlete</div>
+                        <div class="menu">
+                            {{ range .athletes }}
+                            <div class="item" data-value="{{ .ID }}">{{ .Name }}</div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <input name="name" placeholder="Name" type="text">
+                </div>
+                <div class="field">
+                    <input name="mail" placeholder="Mail" type="email">
+                </div>
+                <div class="field">
+                    <textarea name="message" rows="2" placeholder="Message"></textarea>
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        $('.dropdown')
+            .dropdown();
+        $('.ui.form')
+            .form({
+                fields: {
+                    athlete: 'empty',
+                    name: 'empty',
+                    mail: 'empty',
+                    message: 'empty'
+                }
+            });
+    </script>
+</body>
+
+</html>

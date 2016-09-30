@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+
+assets/node_modules
+assets/semantic
+assets/semantic.json
+conf.yml
