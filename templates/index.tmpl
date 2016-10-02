@@ -83,6 +83,35 @@
         </div>
         {{ end }}
         <div class="ui icon message">
+            <i class="alarm outline icon"></i>
+            <div class="content">
+                <div class="header">
+                    La course est à présent terminée !
+                </div>
+                <p>Vous avez été 36 personnes à leur envoyer plus de 120 messages, et pour ça ils vous remercient ! (Je présume)</p>
+                <p>Sans comptez ceux qui leur ont envoyé leur soutien en passant directement sur le site de <a href="http://marchons.com">marchons.com</a> !</p>
+            </div>
+        </div>
+        <div class="ui segment">
+            <h3>Classement</h3>
+            <h4>24h Marche</h4>
+            <ul>
+                <li>Christian ‘Le Fou’ Mauduit est arrivé premier de son épreuve, avec ses 165km et 142m !</li>
+            </ul>
+            <h4>24h Course</h4>
+            <ul>
+                <li>1. En 15<sup>ème</sup> position, Pierre ‘Dark Poupou’ Houssin ! Il a parcouru 119km et 402m !</li>
+                <li>2. En 16<sup>ème</sup> position, Pauline ‘Queen of the Gif’ Barnouin ! 110km et 654m au compteur !</li>
+                <li>3. En 21<sup>ème</sup> position, Robin ‘Not Batman’ Leboeuf ! 101km et 807m !</li>
+                <li>4. En 22<sup>ème</sup> position, François(e) ‘Fanch’ Donval ! On a enfin notre réponse : 101km et 218m !</li>
+                <li>5. En 23<sup>ème</sup> position, Christophe ‘FREYBLA’ Freihuber ! 100km et 18m !</li>
+                <li>6. En 25<sup>ème</sup> position, Alison ‘Pimpante Party Planner’ Eastaway ! 86km et 407m !</li>
+                <li>7. En 26<sup>ème</sup> position, Wilfrid ‘The Warrior’ Lancelle ! 83km et 145m !</li>
+                <li>8. En 27<sup>ème</sup> position, Stéph ‘Bikette’ Baltus ! 83km et 145m !</li>
+                <li>9. En 28<sup>ème</sup> position, Jean-‘The Director’ Louis Bergamo ! 76km et 204m !</li>
+            </ul>
+        </div>
+        <div class="ui icon message">
             <i class="inbox icon"></i>
             <div class="content">
                 <div class="header">
@@ -95,7 +124,7 @@
         </div>
         <div class="ui segment center aligned">
             <form class="ui form" action="/" method="post">
-                <div class="field">
+                <div class="disabled field">
                     <div class="ui selection dropdown">
                         <input name="athlete" type="hidden">
                         <i class="dropdown icon"></i>
@@ -107,16 +136,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="field">
+                <div class="disabled field">
                     <input name="name" placeholder="Name" type="text">
                 </div>
-                <div class="field">
+                <div class="disabled field">
                     <input name="mail" placeholder="Mail" type="email">
                 </div>
-                <div class="field">
+                <div class="disabled field">
                     <textarea name="message" rows="2" placeholder="Message"></textarea>
                 </div>
-                <button class="ui button" type="submit">Submit</button>
+                <button class="ui button disabled" type="submit">Submit</button>
             </form>
         </div>
         <div class="ui icon message">

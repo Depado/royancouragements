@@ -6,6 +6,8 @@ import (
 	"net/url"
 
 	"github.com/gin-gonic/gin"
+
+	"github.com/Depado/royancouragements/conf"
 )
 
 // SendForm is the form required to send a message
@@ -19,6 +21,10 @@ type SendForm struct {
 // PostMessage is the handler for the form post
 func PostMessage(c *gin.Context) {
 	var err error
+	if !conf.C.Accept {
+		c.Redirect(http.StatusMovedPermanently, "/")
+		return
+	}
 	var form SendForm
 	if err = c.Bind(&form); err != nil {
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{"athletes": athletes, "posted": "errors"})

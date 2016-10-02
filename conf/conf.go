@@ -7,9 +7,10 @@ import (
 )
 
 type conf struct {
-	Host  string `yaml:"host"`
-	Port  int    `yaml:"port"`
-	Debug bool   `yaml:"debug"`
+	Host   string `yaml:"host"`
+	Port   int    `yaml:"port"`
+	Debug  bool   `yaml:"debug"`
+	Accept bool   `yaml:"accept"`
 }
 
 // C is the global conf
