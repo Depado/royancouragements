@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"log"
 
+	"github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 
 	"github.com/Depado/royancouragements/conf"
@@ -14,7 +14,7 @@ func main() {
 	var err error
 
 	if err = conf.Load("conf.yml"); err != nil {
-		log.Fatal(err)
+		logrus.WithError(err).Fatal("Couldn't load configuration files")
 	}
 
 	r := gin.Default()

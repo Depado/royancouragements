@@ -82,7 +82,7 @@
             </div>
         </div>
         {{ end }}
-        <div class="ui icon message">
+        <!-- <div class="ui icon message">
             <i class="alarm outline icon"></i>
             <div class="content">
                 <div class="header">
@@ -110,21 +110,23 @@
                 <li>8. En 27<sup>ème</sup> position, Stéph ‘Bikette’ Baltus ! 83km et 145m !</li>
                 <li>9. En 28<sup>ème</sup> position, Jean-‘The Director’ Louis Bergamo ! 76km et 204m !</li>
             </ul>
-        </div>
+        </div> -->
         <div class="ui icon message">
             <i class="inbox icon"></i>
             <div class="content">
                 <div class="header">
                     Toi aussi offre ton soutiens à ces braves gens !
                 </div>
-                <p>Parce que chaque jour qui passe, nous nous demandons tous : “Mais combien de kilomètres aurait fait Fanch si il avait couru 24h d'affilé ?” et qu'enfin nous allons avoir notre réponse.</p>
-                <p>Et parce que j'ai codé ce machin à la va vite, <a href="http://www.marchons.com/directlive/encourage.php?comp=187">clique-ici si rien ne marche.</a></p>
-                <p>Et le code traine <a href="https://github.com/Depado/royancouragements">quelque part par là.</a></p>
+                <p>
+                    Non content de faire des posts TGC absolument épiques, Robin a décidé de retourner à Royan cette année. Il a d'ailleurs profité de l'occasion pour y traîner Kevin, M. Proctool.
+                    D'ailleurs personne ne sait si celui-ci était consentant ou non. Et comme Robin aime bien engrainer des gens qui n'ont rien demandé, il a aussi embarqué son père que vous pouvez aussi encourager sur cette page !
+                </p>
+                <p>Cette année encore nous allons pouvoir les encourager tout au long de cette sublime course ! Pour rappel, l'an passé notre Robin national avait avalé 101km et 807m.</p>
             </div>
         </div>
         <div class="ui segment center aligned">
             <form class="ui form" action="/" method="post">
-                <div class="disabled field">
+                <div class="{{ if not .accept }}disabled{{ end }} field">
                     <div class="ui selection dropdown">
                         <input name="athlete" type="hidden">
                         <i class="dropdown icon"></i>
@@ -136,19 +138,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="disabled field">
+                
+                <div class="{{ if not .accept }}disabled{{ end }} field">
                     <input name="name" placeholder="Name" type="text">
                 </div>
-                <div class="disabled field">
+                <div class="{{ if not .accept }}disabled{{ end }} field">
                     <input name="mail" placeholder="Mail" type="email">
                 </div>
-                <div class="disabled field">
+                <div class="{{ if not .accept }}disabled{{ end }} field">
                     <textarea name="message" rows="2" placeholder="Message"></textarea>
                 </div>
-                <button class="ui button disabled" type="submit">Submit</button>
+                <button class="ui button {{ if not .accept }}disabled{{ end }}" type="submit">Envoyer !</button>
             </form>
         </div>
-        <div class="ui icon message">
+        <!-- <div class="ui icon message">
             <i class="dollar icon"></i>
             <div class="content">
                 <div class="header">
@@ -156,6 +159,13 @@
                 </div>
                 <p><a href="https://give.everydayhero.com/au/alison-24h" target="_blank">C'est par ici que ça se passe</a></p>
                 <p>‘On My Feet’ Australia, aide les SDF à se remettre sur pieds via la course à pied. N’hésite pas à contribuer à cette très belle cause !</p>
+            </div>
+        </div> -->
+        <div class="ui icon message">
+            <i class="inbox icon"></i>
+            <div class="content">
+                <p>Et parce que j'ai codé ce machin à la va vite, <a href="http://francechrono.fr/lesdirects/encourage.php?comp=Royan2017">clique-ici si rien ne marche.</a></p>
+                <p>Et le code traine <a href="https://github.com/Depado/royancouragements">quelque part par là.</a></p>
             </div>
         </div>
     </div>
